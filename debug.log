@@ -1,0 +1,60 @@
+2019-09-12 16:26:11,373 - http://blogspot.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:11,374 - http://blogspot.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:11,374 - http://apple.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:11,375 - http://apple.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:11,375 - http://tumblr.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:11,374 - http://adobe.co2аm/ - DEBUG - Calling get_pull
+2019-09-12 16:26:11,400 - http://tumblr.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:11,406 - http://adobe.co2аm/ - DEBUG - get_pull function executing
+2019-09-12 16:26:12,292 - http://adobe.co2аm/ - ERROR - HTTPConnectionPool(host='adobe.xn--co2m-73d', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcc38e3f320>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+2019-09-12 16:26:12,298 - http://youtu.be/ - DEBUG - Calling get_pull
+2019-09-12 16:26:12,303 - http://youtu.be/ - DEBUG - get_pull function executing
+2019-09-12 16:26:12,735 - http://apple.com/ - DEBUG - get_pull function ended with: (1568294771.3802593, 'http://apple.com/', 'apple.com', 1355, 200, 116234)
+2019-09-12 16:26:12,741 - http://amazon.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:12,746 - http://amazon.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:13,269 - http://youtu.be/ - DEBUG - get_pull function ended with: (1568294772.309146, 'http://youtu.be/', 'youtu.be', 960, 200, 1497488)
+2019-09-12 16:26:13,274 - http://goo.gl/ - DEBUG - Calling get_pull
+2019-09-12 16:26:13,274 - http://goo.gl/ - DEBUG - get_pull function executing
+2019-09-12 16:26:13,444 - http://tumblr.com/ - DEBUG - get_pull function ended with: (1568294771.4213374, 'http://tumblr.com/', 'tumblr.com', 2023, 200, 77683)
+2019-09-12 16:26:13,449 - http://vimeo.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:13,449 - http://vimeo.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:14,072 - http://vimeo.com/ - DEBUG - get_pull function ended with: (1568294773.4496999, 'http://vimeo.com/', 'vimeo.com', 623, 200, 24933)
+2019-09-12 16:26:14,077 - http://flickr.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:14,082 - http://flickr.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:14,226 - http://amazon.com/ - DEBUG - get_pull function ended with: (1568294772.7514944, 'http://amazon.com/', 'amazon.com', 1475, 503, None)
+2019-09-12 16:26:14,235 - http://microsoft.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:14,240 - http://microsoft.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:15,056 - http://blogspot.com/ - DEBUG - get_pull function ended with: (1568294771.3743837, 'http://blogspot.com/', 'blogspot.com', 3682, 200, 94551)
+2019-09-12 16:26:15,061 - http://yahoo.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:15,061 - http://yahoo.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:15,117 - http://goo.gl/ - DEBUG - get_pull function ended with: (1568294773.2748728, 'http://goo.gl/', 'goo.gl', 1843, 200, 136983)
+2019-09-12 16:26:15,129 - http://bit.ly/ - DEBUG - Calling get_pull
+2019-09-12 16:26:15,135 - http://bit.ly/ - DEBUG - get_pull function executing
+2019-09-12 16:26:15,225 - http://microsoft.com/ - DEBUG - get_pull function ended with: (1568294774.240453, 'http://microsoft.com/', 'microsoft.com', 985, 200, 319928)
+2019-09-12 16:26:15,231 - http://vk.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:15,231 - http://vk.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:15,475 - http://vk.com/ - DEBUG - get_pull function ended with: (1568294775.231133, 'http://vk.com/', 'vk.com', 245, 200, 19474)
+2019-09-12 16:26:15,481 - http://qq.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:15,481 - http://qq.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:15,708 - http://flickr.com/ - DEBUG - get_pull function ended with: (1568294774.0880568, 'http://flickr.com/', 'flickr.com', 1620, 200, 535610)
+2019-09-12 16:26:15,713 - http://godaddy.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:15,719 - http://godaddy.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:16,008 - http://bit.ly/ - DEBUG - get_pull function ended with: (1568294775.1402798, 'http://bit.ly/', 'bit.ly', 868, 200, 89842)
+2019-09-12 16:26:16,013 - http://reddit.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:16,019 - http://reddit.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:17,560 - http://qq.com/ - DEBUG - get_pull function ended with: (1568294775.4813955, 'http://qq.com/', 'qq.com', 2079, 200, 455158)
+2019-09-12 16:26:17,561 - http://buydomains.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:17,567 - http://buydomains.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:17,611 - http://reddit.com/ - DEBUG - get_pull function ended with: (1568294776.0243413, 'http://reddit.com/', 'reddit.com', 1587, 401, None)
+2019-09-12 16:26:17,617 - http://w3.org/ - DEBUG - Calling get_pull
+2019-09-12 16:26:17,622 - http://w3.org/ - DEBUG - get_pull function executing
+2019-09-12 16:26:17,796 - http://godaddy.com/ - DEBUG - get_pull function ended with: (1568294775.7191768, 'http://godaddy.com/', 'godaddy.com', 2077, 200, 545940)
+2019-09-12 16:26:17,802 - http://nytimes.com/ - DEBUG - Calling get_pull
+2019-09-12 16:26:17,807 - http://nytimes.com/ - DEBUG - get_pull function executing
+2019-09-12 16:26:17,827 - http://yahoo.com/ - DEBUG - get_pull function ended with: (1568294775.061773, 'http://yahoo.com/', 'yahoo.com', 2766, 200, 1050884)
+2019-09-12 16:26:17,843 - http://t.co/ - DEBUG - Calling get_pull
+2019-09-12 16:26:17,843 - http://t.co/ - DEBUG - get_pull function executing
+2019-09-12 16:26:18,267 - http://w3.org/ - DEBUG - get_pull function ended with: (1568294777.6329064, 'http://w3.org/', 'w3.org', 635, 200, 32992)
+2019-09-12 16:26:18,425 - http://t.co/ - DEBUG - get_pull function ended with: (1568294777.8434155, 'http://t.co/', 't.co', 582, 200, 3416)
+2019-09-12 16:26:18,623 - http://nytimes.com/ - DEBUG - get_pull function ended with: (1568294777.812619, 'http://nytimes.com/', 'nytimes.com', 811, 200, 2055924)
+2019-09-12 16:26:19,750 - http://buydomains.com/ - DEBUG - get_pull function ended with: (1568294777.5775838, 'http://buydomains.com/', 'buydomains.com', 2173, 200, 135674)
