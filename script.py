@@ -1,11 +1,12 @@
-import json
-import openpyxl
-import requests
+import logging
 import sqlite3
-import time
 import sys
 import threading
-import logging
+import time
+import traceback
+import openpyxl
+import requests
+from pythonjsonlogger import jsonlogger
 
 
 class MyThread(threading.Thread):
@@ -20,32 +21,49 @@ class MyThread(threading.Thread):
         logger.debug('Calling get_pull')
         get_pull(self.url, self.key, logger)
 
-def get_logger():
 
-    logger = logging.getLogger("requests_log")
+class CustomJsonFormatter(jsonlogger.JsonFormatter):
+
+    def add_fields(self, log_record, record, message_dict):
+        super(CustomJsonFormatter, self).add_fields(log_record, record, message_dict)
+        log_record['timestamp'] = time.time()
+        log_record['url'] = log_record['message']
+        del log_record['message']
+
+
+def get_logger():
+    logger = logging.getLogger(config.debug_path)
     logger.setLevel(logging.DEBUG)
-#    fherror = logging.FileHandler("errors.log")  # это будет файл в формате json
+
     fhdebug = logging.FileHandler("debug.log")
-#    fmterror = '%(message)s'
     fmtdebug = '%(asctime)s - %(threadName)s - %(levelname)s - %(message)s'
     formatterdebug = logging.Formatter(fmtdebug)
-#    formattererror = logging.Formatter(fmterror)
     fhdebug.setFormatter(formatterdebug)
-#    fherror.setFormatter(formattererror)
-#    logger.addHandler(formattererror)
     logger.addHandler(fhdebug)
+
+    shdebug = logging.StreamHandler(sys.stdout)
+    shdebug.setFormatter(formatterdebug)
+    logger.addHandler(shdebug)
+
+    fherror = logging.FileHandler(config.errors_path)
+    fherror.setLevel(logging.ERROR)
+    formattererror = CustomJsonFormatter('(timestamp) (url) (message)')
+    fherror.setFormatter(formattererror)
+    logger.addHandler(fherror)
+
     return logger
 
 
 def get_pull(url, key, logger):
-
     logger.debug('get_pull function executing')
     cont_length = None
     st = time.time()
     try:
-        resp = requests.get(url)
+        resp = requests.get(url, timeout=config.req_timeout)
     except Exception as error:
-        logger.error(error)
+        logger.error(url, extra={'error': {'exception_type': error.__class__.__name__,
+                                           'exception_value': error.args,
+                                           'stack_info': traceback.extract_tb(sys.exc_info()[2])}})
     else:
 
         if resp.status_code == 200:
@@ -57,15 +75,18 @@ def get_pull(url, key, logger):
 
 if __name__ == '__main__':
 
+    assert len(sys.argv) > 1
+    import config
+
     logger = get_logger()
-    wb = openpyxl.load_workbook(filename='raw_data.xlsx')
+    wb = openpyxl.load_workbook(filename=sys.argv[1])
     sheet = wb['Лист1']
     urls = {sheet['B%s' % i].value: sheet['A%s' % i].value for i in range(2, sheet.max_row + 1) if
             sheet['C%s' % i].value}
     results = []
     for key in urls:
         while True:
-            if threading.active_count() <= 4:
+            if threading.active_count() <= config.threads_count:
                 thread = MyThread(key, urls[key], logger)
                 thread.setName(urls[key])
                 thread.start()
@@ -73,7 +94,7 @@ if __name__ == '__main__':
 
     while True:
         if threading.active_count() == 1:
-            conn = sqlite3.connect("urls.db")
+            conn = sqlite3.connect(config.db_path)
             cursor = conn.cursor()
 
             cursor.execute("""CREATE TABLE IF NOT EXISTS requests
@@ -83,5 +104,3 @@ if __name__ == '__main__':
             cursor.executemany("INSERT INTO requests VALUES (?,?,?,?,?,?)", results)
             conn.commit()
             break
-
-
