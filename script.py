@@ -79,7 +79,12 @@ if __name__ == '__main__':
     import config
 
     logger = get_logger()
-    wb = openpyxl.load_workbook(filename=sys.argv[1])
+    try:
+        wb = openpyxl.load_workbook(filename=sys.argv[1])
+    except openpyxl.utils.exceptions.InvalidFileException:
+        logger.debug('Input file not found or not in xlsx format')
+        exit(1)
+
     sheet = wb['Лист1']
     urls = {sheet['B%s' % i].value: sheet['A%s' % i].value for i in range(2, sheet.max_row + 1) if
             sheet['C%s' % i].value}
